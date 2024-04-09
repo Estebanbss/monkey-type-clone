@@ -358,7 +358,9 @@
 
      }else{
           $currentLetter.classList.add('active','is-last');
-          //game over
+          if($currentWord === $text.lastElementChild){
+               gameOver();
+          }
      }
      }
 
