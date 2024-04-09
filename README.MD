@@ -1,7 +1,9 @@
 # Monkey Type Clone but is a Parrot
 
 This project is a web-based game that replicates the functionality of the popular "Monkey Type" game but with a playful theme featuring a parrot. Players are presented with a series of random words and are required to type them as accurately and quickly as possible. The game provides feedback on typing speed (words per minute) and accuracy.
+
 ![forthebadge](https://github.com/Estebanbss/monkey-type-clone/blob/main/.github/workflows/monkeyToParrot.gif)
+
 ## How to Play
 
 1. Open the `index.html` file in your web browser.
