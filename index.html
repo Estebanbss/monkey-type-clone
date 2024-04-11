@@ -403,7 +403,6 @@
      function initParrot(){
           const $parrot = document.querySelector('#parrot');
           const blinKIt = setInterval(()=>{
-               console.log($parrot.src)
                if($parrot.src.includes('Stay')){
                     $parrot.src = 'svg/blink.svg';
                }else{
