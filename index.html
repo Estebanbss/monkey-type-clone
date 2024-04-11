@@ -239,7 +239,7 @@
           })
           document.addEventListener('touchstart', ()=>{
                $input.focus()
-          })
+          }),{once:true};
           document.addEventListener('keydown', ()=>{
                $input.focus()
                if (!playing) {
