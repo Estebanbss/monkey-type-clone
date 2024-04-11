@@ -42,7 +42,7 @@
                top: 0;
                left: 0;
                pointer-events: none;
-
+               opacity: 0;
           }
 
           p{
@@ -239,7 +239,8 @@
           })
           document.addEventListener('touchstart', ()=>{
                $input.focus()
-          }),{once:true};
+
+          })
           document.addEventListener('keydown', ()=>{
                $input.focus()
                if (!playing) {
@@ -266,13 +267,12 @@
      }
 
      function onKeyDown(){
-          $input.value = $input.value.slice(0, $input.maxLength);
           const $currentWord = $text.querySelector('word.active');
           const $currentLetter = $currentWord.querySelector('letter.active');
      
           const {key} = event;
 
-          if(key === ' ' || key === 32 || $input.value === ' '){
+          if(key === ' '){
                event.preventDefault();
                const $nextWord = $currentWord.nextElementSibling;
                const $nextLetter = $nextWord.querySelector('letter');
@@ -295,7 +295,9 @@
                $parrot.src = 'svg/cut.svg'
           }
 
-          if(key === 'Backspace' || key === 8 || $input.value === ''){
+          
+
+          if(key === 'Backspace'){
                const $prevWord = $currentWord.previousElementSibling;
                const $prevLetter = $currentLetter.previousElementSibling;
 
@@ -403,6 +405,7 @@
      function initParrot(){
           const $parrot = document.querySelector('#parrot');
           const blinKIt = setInterval(()=>{
+               console.log($parrot.src)
                if($parrot.src.includes('Stay')){
                     $parrot.src = 'svg/blink.svg';
                }else{
