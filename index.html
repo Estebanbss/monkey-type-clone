@@ -42,7 +42,7 @@
                top: 0;
                left: 0;
                pointer-events: none;
-               opacity: 0;
+
           }
 
           p{
@@ -266,22 +266,13 @@
      }
 
      function onKeyDown(){
-          console.log(event)
-          let keyCode = event?.keyCode || event?.which;
-                    if (keyCode === 229) {
-               setTimeout(function() {
-                    keyCode = event?.keyCode || event?.which;
-                    console.log('Tecla presionada:', keyCode);
-               }, 50); // Espera 50 milisegundos antes de volver a intentar obtener el keyCode
-          } else {
-               console.log('Tecla presionada:', keyCode);
-          }
+          $input.value = $input.value.slice(0, $input.maxLength);
           const $currentWord = $text.querySelector('word.active');
           const $currentLetter = $currentWord.querySelector('letter.active');
      
           const {key} = event;
 
-          if(key === ' '){
+          if(key === ' ' || key === 32 || $input.value === ' '){
                event.preventDefault();
                const $nextWord = $currentWord.nextElementSibling;
                const $nextLetter = $nextWord.querySelector('letter');
@@ -304,7 +295,7 @@
                $parrot.src = 'svg/cut.svg'
           }
 
-          if(key === 'Backspace' || key === 8){
+          if(key === 'Backspace' || key === 8 || $input.value === ''){
                const $prevWord = $currentWord.previousElementSibling;
                const $prevLetter = $currentLetter.previousElementSibling;
 
