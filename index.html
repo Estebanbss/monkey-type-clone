@@ -234,8 +234,14 @@
      }
 
      function initEvents(){
+          document.addEventListener('DOMContentLoaded', ()=>{
+               $input.focus()
+          })
+          document.addEventListener('touchstart', ()=>{
+               $input.focus()
+          })
           document.addEventListener('keydown', ()=>{
-               $input.focus();
+               $input.focus()
                if (!playing) {
                playing = true
                const intervalId = setInterval(() => {
