@@ -267,10 +267,10 @@
 
      function onKeyDown(){
           console.log(event)
-          let keyCode = event.keyCode || event.which;
+          let keyCode = event?.keyCode || event?.which;
                     if (keyCode === 229) {
                setTimeout(function() {
-                    keyCode = event.keyCode || event.which;
+                    keyCode = event?.keyCode || event?.which;
                     console.log('Tecla presionada:', keyCode);
                }, 50); // Espera 50 milisegundos antes de volver a intentar obtener el keyCode
           } else {
